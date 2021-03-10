@@ -1,11 +1,19 @@
-import logo from "./logo.svg";
-import "./App.css";
+import Home from "./booking/Home";
+import Login from "./auth/Login";
+import Register from "./auth/Register";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import TopNav from "./components/TopNav";
 
 function App() {
   return (
-    <div>
-      <h1>Hello world!</h1>
-    </div>
+    <BrowserRouter>
+      <TopNav />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
